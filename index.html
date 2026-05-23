@@ -6,25 +6,10 @@
     <title>Ghazix Homes - يا هلا والله</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* استدعاء خط عام الإبل الفاخر من وزارة الثقافة */
-        @font-face {
-            font-family: 'CamelYearFont';
-            src: url('https://engage.moc.gov.sa/assets/fonts/CamelYear-Regular.woff2') format('woff2'),
-                 url('https://engage.moc.gov.sa/assets/fonts/CamelYear-Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'CamelYearFont';
-            src: url('https://engage.moc.gov.sa/assets/fonts/CamelYear-Bold.woff2') format('woff2'),
-                 url('https://engage.moc.gov.sa/assets/fonts/CamelYear-Bold.woff') format('woff');
-            font-weight: bold;
-            font-style: normal;
-        }
-
         * { 
             box-sizing: border-box; 
             margin: 0; 
@@ -34,7 +19,7 @@
         body {
             background-color: #111111;
             color: #2C2A29;
-            font-family: 'CamelYearFont', sans-serif;
+            font-family: 'Cairo', sans-serif;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -43,7 +28,7 @@
             width: 100vw;
         }
 
-        /* حاوية الأبعاد الصارمة للتلفزيون لمنع أي انعكاس أو تداخل */
+        /* حاوية الأبعاد الثابتة للتلفزيون */
         .viewport-container {
             width: 100vw;
             height: 100vh;
@@ -55,7 +40,7 @@
             box-shadow: 0 25px 60px rgba(0,0,0,0.65);
         }
 
-        /* ضبط حاوية السلايدر لحل مشكلة عكس الحروف */
+        /* حاوية السلايدر مضبوطة الاتجاه لمنع الاختفاء واللون الأبيض */
         .slider-wrapper {
             display: flex;
             width: 400%; 
@@ -127,26 +112,26 @@
         }
 
         h1 {
-            font-size: 3.4vw;
+            font-size: 3.2vw;
             color: #1A1A1A;
-            font-weight: bold;
-            line-height: 1.3;
+            font-weight: 700;
+            line-height: 1.4;
             margin-bottom: 12px;
         }
 
         h2 {
             font-size: 1.1vw;
             color: #8E7A53;
-            font-weight: normal;
+            font-weight: 600;
             letter-spacing: 1px;
             margin-bottom: 14px;
         }
 
         p {
-            font-size: 1.25vw;
+            font-size: 1.2vw;
             color: #514E4A;
-            line-height: 1.75;
-            font-weight: normal;
+            line-height: 1.8;
+            font-weight: 400;
         }
 
         .luxury-line {
@@ -160,7 +145,7 @@
             list-style: none; 
         }
         .amenities-list li {
-            font-size: 1.2vw;
+            font-size: 1.15vw;
             margin-bottom: 1.4vw;
             display: flex;
             align-items: center;
@@ -182,7 +167,7 @@
             border: 1px solid #E4E0D5;
         }
 
-        /* التوافق مع الجوالات */
+        /* التوافق التام مع الجوالات والشاشات الصغيرة */
         @media (max-width: 768px) {
             body { overflow-y: auto; height: auto; }
             .viewport-container { height: auto; max-height: none; overflow: visible; }
@@ -191,14 +176,14 @@
             .hotel-logo-container { position: relative; top: 0; right: 0; margin: 20px auto; width: fit-content; }
             .slide-content { padding: 20px 10px; text-align: center; }
             .luxury-line { margin: 15px auto; }
-            h1 { font-size: 28px; }
+            h1 { font-size: 26px; }
             h2 { font-size: 14px; }
-            p { font-size: 16px; }
-            .amenities-list li { font-size: 15px; text-align: right; }
-            .amenities-list li i { font-size: 16px; }
+            p { font-size: 15px; }
+            .amenities-list li { font-size: 14px; text-align: right; }
+            .amenities-list li i { font-size: 15px; }
             .wifi-box { margin-top: 20px; padding: 15px; }
             .wifi-box p { font-size: 14px !important; }
-            .slide-image { width: 100%; height: 300px; order: -1; }
+            .slide-image { width: 100%; height: 280px; order: -1; }
         }
     </style>
 </head>
@@ -248,7 +233,7 @@
                     <h2>وقت السينما والترفيه</h2>
                     <h1>شاشة ذكية <br>وكل اللي تحبونه متوفر</h1>
                     <div class="luxury-line"></div>
-                    <p>الشاشة مجهزة بأقوى برامج الترفيه (نتفليكس ويوتيوب). خذوا راحتكم، تمددوا على الصنبية واستمتعوا بمشاهدة أفلامكم ومسلسلاتكم المفضلة بجودة عالية.</p>
+                    <p>الشاشة مجهزة بأقوى برامج الترفيه (نتفليكس ويوتيوب). خذوا راحتكم، تمددوا على الكنب واستمتعوا بمشاهدة أفلامكم ومسلسلاتكم المفضلة بجودة عالية.</p>
                 </div>
                 <div class="slide-image">
                     <img src="living.jpg" alt="غرفة المعيشة">
@@ -276,12 +261,12 @@
         const totalSlides = 4;
         const displayTime = 8000; 
 
-        // تحريك السلايدر باتجاه متناسق يمنع العكس نهائياً
+        // تفعيل حركة انتقال آمنة ومدروسة تتوافق مع متصفحات التلفزيون
         if (window.innerWidth > 768) {
             setInterval(() => {
                 currentSlide = (currentSlide + 1) % totalSlides;
-                // استخدام تحريك يعتمد على القيمة السالبة تماشياً مع الـ RTL المصلح برمجياً
-                slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+                // الانتقال الآمن لليمين بنسبة مئوية تمنع اختفاء العناصر
+                slider.style.transform = `translateX(${currentSlide * 25}%)`;
             }, displayTime);
         }
     </script>
