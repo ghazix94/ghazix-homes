@@ -1,20 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghazix Homes - Exclusive Stay</title>
+    <title>Ghazix Homes - يا هلا والله</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        /* استدعاء خط عام الإبل الفاخر من وزارة الثقافة */
+        @font-face {
+            font-family: 'CamelYearFont';
+            src: url('https://engage.moc.gov.sa/assets/fonts/CamelYear-Regular.woff2') format('woff2'),
+                 url('https://engage.moc.gov.sa/assets/fonts/CamelYear-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'CamelYearFont';
+            src: url('https://engage.moc.gov.sa/assets/fonts/CamelYear-Bold.woff2') format('woff2'),
+                 url('https://engage.moc.gov.sa/assets/fonts/CamelYear-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
         
         body {
             background-color: #111111;
             color: #2C2A29;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'CamelYearFont', sans-serif;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -23,10 +43,10 @@
             width: 100vw;
         }
 
-        /* حاوية الأبعاد الصارمة لشاشة التلفزيون المخصصة 16:9 */
-        .viewport-16-9 {
+        /* حاوية الأبعاد الصارمة للتلفزيون لمنع أي انعكاس أو تداخل */
+        .viewport-container {
             width: 100vw;
-            height: 56.25vw;
+            height: 100vh;
             max-height: 100vh;
             max-width: 177.78vh;
             background-color: #FBFBF9;
@@ -35,6 +55,7 @@
             box-shadow: 0 25px 60px rgba(0,0,0,0.65);
         }
 
+        /* ضبط حاوية السلايدر لحل مشكلة عكس الحروف */
         .slider-wrapper {
             display: flex;
             width: 400%; 
@@ -47,39 +68,41 @@
             height: 100%;
             background-color: #FBFBF9; 
             display: grid;
-            grid-template-columns: 0.9fr 1.1fr; /* توزيع متناسق تماماً مع اتجاه القراءة الإنجليزي LTR */
+            grid-template-columns: 1.1fr 0.9fr; 
             align-items: center;
             position: relative;
         }
 
-        /* حاوية الشعار الفاخر في الزاوية اليسرى العلوية */
+        /* الشعار بالزاوية اليمنى */
         .hotel-logo-container {
             position: absolute;
             top: 6%;
-            left: 5%;
+            right: 5%;
             z-index: 1000;
-            background: rgba(251, 251, 249, 0.94);
-            padding: 12px 24px;
+            background: rgba(251, 251, 249, 0.96);
+            padding: 10px 24px;
             border-radius: 4px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.04);
-            border-left: 3px solid #8E7A53;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+            border-right: 3px solid #8E7A53;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .hotel-logo-container img {
-            height: 55px;
+            height: 52px;
             width: auto;
             display: block;
             object-fit: contain;
         }
 
         .slide-content {
-            padding: 0 8% 0 10%;
+            padding: 0 10% 0 8%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             height: 100%;
+            z-index: 2;
+            text-align: right;
         }
 
         .slide-image {
@@ -95,62 +118,58 @@
             object-position: center;
         }
         
-        /* تأثير تدرج الظل الاحترافي والناعم مائل لجهة اليسار */
         .slide-image::after {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to left, rgba(251, 251, 249, 0.98) 0%, rgba(251, 251, 249, 0) 20%);
+            background: linear-gradient(to right, rgba(251, 251, 249, 0.98) 0%, rgba(251, 251, 249, 0) 20%);
             pointer-events: none;
         }
 
         h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.6vw;
+            font-size: 3.4vw;
             color: #1A1A1A;
-            font-weight: 400;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 12px;
         }
 
         h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.05vw;
+            font-size: 1.1vw;
             color: #8E7A53;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 18px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
         }
 
         p {
-            font-size: 1.15vw;
-            color: #615E5B;
-            line-height: 1.8;
-            font-weight: 300;
+            font-size: 1.25vw;
+            color: #514E4A;
+            line-height: 1.75;
+            font-weight: normal;
         }
 
         .luxury-line {
-            width: 50px;
-            height: 1px;
+            width: 60px;
+            height: 1.5px;
             background-color: #8E7A53;
-            margin: 1.8vw 0;
+            margin: 1.5vw 0;
         }
 
-        .amenities-list { list-style: none; }
+        .amenities-list { 
+            list-style: none; 
+        }
         .amenities-list li {
-            font-size: 1.1vw;
-            margin-bottom: 1.5vw;
+            font-size: 1.2vw;
+            margin-bottom: 1.4vw;
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 15px;
             color: #3A3832;
-            font-weight: 300;
         }
         .amenities-list li i {
             color: #8E7A53;
-            font-size: 1.2vw;
+            font-size: 1.3vw;
             width: 25px;
             text-align: center;
         }
@@ -162,70 +181,89 @@
             margin-top: 1vw;
             border: 1px solid #E4E0D5;
         }
+
+        /* التوافق مع الجوالات */
+        @media (max-width: 768px) {
+            body { overflow-y: auto; height: auto; }
+            .viewport-container { height: auto; max-height: none; overflow: visible; }
+            .slider-wrapper { display: block; width: 100%; }
+            .slide { display: flex; flex-direction: column; width: 100%; height: auto; padding: 40px 20px; border-bottom: 1px solid #E4E0D5; }
+            .hotel-logo-container { position: relative; top: 0; right: 0; margin: 20px auto; width: fit-content; }
+            .slide-content { padding: 20px 10px; text-align: center; }
+            .luxury-line { margin: 15px auto; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 14px; }
+            p { font-size: 16px; }
+            .amenities-list li { font-size: 15px; text-align: right; }
+            .amenities-list li i { font-size: 16px; }
+            .wifi-box { margin-top: 20px; padding: 15px; }
+            .wifi-box p { font-size: 14px !important; }
+            .slide-image { width: 100%; height: 300px; order: -1; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="viewport-16-9">
+    <div class="viewport-container">
 
         <div class="hotel-logo-container">
-            <img src="logo.png" alt="Ghazix Homes Logo">
+            <img src="logo.png" alt="شعار غازيكس هومز">
         </div>
 
         <div class="slider-wrapper" id="slider">
             
             <div class="slide">
                 <div class="slide-content">
-                    <h2>Welcome Experience</h2>
-                    <h1>Your Sanctuary <br>in Khobar</h1>
+                    <h2>يا هلا والله ومسهلا</h2>
+                    <h1>نورتوا مكانكم <br>في الخبر</h1>
                     <div class="luxury-line"></div>
-                    <p>We are delighted to have you as our guest. Every detail in this home has been curated to offer you an exceptional, peaceful, and elevated living experience.</p>
+                    <p>سعداء جداً بوجودكم معنا، ورتبنا لكم كل زاوية في الشقة بكل حب واهتمام عشان تعيشون تجربة مريحة، هادية، وتليق بجيتكم الغالية علينا.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="entrance.jpg" alt="Entrance Corridor">
+                    <img src="entrance.jpg" alt="مدخل الشقة">
                 </div>
             </div>
 
             <div class="slide">
                 <div class="slide-content">
-                    <h2>Premium Amenities</h2>
-                    <h1>Indulge in Quiet <br>Moments</h1>
+                    <h2>روقوا وانبسطوا</h2>
+                    <h1>تفاصيل تكمّل <br>جلساتكم ويومكم</h1>
                     <ul class="amenities-list" style="margin-top: 1vw;">
-                        <li><i class="fa-solid fa-mug-hot"></i> <span>Fully equipped coffee bar tailored for your perfect mornings.</span></li>
-                        <li><i class="fa-solid fa-wifi"></i> <span>Complimentary ultra-high-speed 5G network across the unit.</span></li>
-                        <li><i class="fa-solid fa-snowflake"></i> <span>Smart climate control system configured for maximum comfort.</span></li>
+                        <li><i class="fa-solid fa-mug-hot"></i> <span>ركن قهوة جاهز ومتكامل عشان تبدون صباحكم بكل روقان وبأحلى مزاج.</span></li>
+                        <li><i class="fa-solid fa-wifi"></i> <span>إنترنت سريع 5G ومفتوح مجاناً متوفر بكل مكان حولكم في الشقة.</span></li>
+                        <li><i class="fa-solid fa-snowflake"></i> <span>التكييف مضبوط وذكي عشان يضمن لكم جو بارد ومثالي طول فترة الإقامة.</span></li>
                     </ul>
                     <div class="wifi-box">
-                        <p style="font-size: 0.8vw; font-weight: 500; color: #8E7A53; letter-spacing: 2px; margin-bottom: 0.3vw;">COMPLIMENTARY WIFI</p>
-                        <p style="font-size: 1.4vw; color: #1a1a1a; font-weight: 400; font-family: 'Cormorant Garamond', serif;">Network: <b>Ghazix_Homes_5G</b></p>
+                        <p style="font-size: 0.8vw; font-weight: bold; color: #8E7A53; margin-bottom: 0.3vw;">معلومات شبكة الواي فاي</p>
+                        <p style="font-size: 1.3vw; color: #1a1a1a; font-weight: bold;">اسم الشبكة: <span style="font-family: sans-serif;">Ghazix_Homes_5G</span></p>
                     </div>
                 </div>
                 <div class="slide-image">
-                    <img src="coffee.jpg" alt="Coffee Corner">
+                    <img src="coffee.jpg" alt="ركن القهوة">
                 </div>
             </div>
 
             <div class="slide">
                 <div class="slide-content">
-                    <h2>Smart Living</h2>
-                    <h1>Immersive <br>Entertainment</h1>
+                    <h2>وقت السينما والترفيه</h2>
+                    <h1>شاشة ذكية <br>وكل اللي تحبونه متوفر</h1>
                     <div class="luxury-line"></div>
-                    <p>The smart display is fully equipped with premium streaming platforms (Netflix & YouTube). Relax and enjoy your preferred cinematic content in high definition.</p>
+                    <p>الشاشة مجهزة بأقوى برامج الترفيه (نتفليكس ويوتيوب). خذوا راحتكم، تمددوا على الصنبية واستمتعوا بمشاهدة أفلامكم ومسلسلاتكم المفضلة بجودة عالية.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="living.jpg" alt="Living Room">
+                    <img src="living.jpg" alt="غرفة المعيشة">
                 </div>
             </div>
 
             <div class="slide">
                 <div class="slide-content">
-                    <h2>The Neighborhood</h2>
-                    <h1>Discover the Beauty <br>of the Coast</h1>
+                    <h2>حولكم وقريبين منكم</h2>
+                    <h1>الخبر كلها <br>بين يديكم ومن نافذتكم</h1>
                     <div class="luxury-line"></div>
-                    <p>Situated in one of Khobar's most prestigious districts, you are just moments away from premium dining, luxury shopping, and vibrant coastal landmarks.</p>
+                    <p>أنتم الحين في واحد من أرقى وأجمل أحياء الخبر، خطوات بسيطة وتكونون عند أفخم المطاعم، الكافيهات، والمجمعات، وجنب أهم واجهات الخبر البحرية.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="view.jpg" alt="Window View">
+                    <img src="view.jpg" alt="إطلالة النافذة">
                 </div>
             </div>
 
@@ -236,13 +274,16 @@
         const slider = document.getElementById('slider');
         let currentSlide = 0;
         const totalSlides = 4;
-        const displayTime = 8000; // وقت العرض لكل سلايد 8 ثوانٍ لمنح الضيف راحة في القراءة
+        const displayTime = 8000; 
 
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            // التحريك الانسيابي لليسار بما يتناسب مع لغة العرض الإنجليزية
-            slider.style.transform = `translateX(-${currentSlide * 25}%)`;
-        }, displayTime);
+        // تحريك السلايدر باتجاه متناسق يمنع العكس نهائياً
+        if (window.innerWidth > 768) {
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                // استخدام تحريك يعتمد على القيمة السالبة تماشياً مع الـ RTL المصلح برمجياً
+                slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+            }, displayTime);
+        }
     </script>
 
 </body>
