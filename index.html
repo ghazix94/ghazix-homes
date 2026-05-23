@@ -259,25 +259,16 @@
     </div>
 
     <script>
-        // سكربت ذكي لقراءة اسم الضيف تلقائياً من رابط الـ URL
-        function getGuestName() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const guest = urlParams.get('guest');
-            if (guest) {
-                // تنظيف الاسم المستلم من أي علامات زائدة أو شرطات
-                return decodeURIComponent(guest).replace(/_/g, ' ');
-            }
-            return null;
-        }
+        // 🛑 لتغيير اسم الضيف عن بُعد، فقط غيّر الاسم الموجود بين القوسين بالأسفل:
+        const currentGuest = "أبو سعود"; 
 
-        // تطبيق اسم الضيف إذا وُجد في الرابط
-        const guestName = getGuestName();
-        if (guestName) {
-            document.getElementById('guest-name').innerText = 'يا هلا بـ ' + guestName;
+        // السكربت يطبق الاسم مباشرة عند تشغيل الشاشة
+        if (currentGuest && currentGuest.trim() !== "") {
+            document.getElementById('guest-name').innerText = 'يا هلا بـ ' + currentGuest;
             document.getElementById('guest-welcome').innerText = 'حياك الله ومسهلا';
         }
 
-        // تحريك السلايدر
+        // تحريك السلايدر تلقائياً
         const slider = document.getElementById('slider');
         let currentSlide = 0;
         const totalSlides = 4;
