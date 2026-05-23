@@ -23,7 +23,7 @@
             width: 100vw;
         }
 
-        /* حاوية الأبعاد الصارمة 16:9 للشاشات الكبيرة والتلفزيون */
+        /* حاوية الأبعاد الصارمة 16:9 */
         .viewport-16-9 {
             width: 100vw;
             height: 56.25vw;
@@ -52,6 +52,19 @@
             position: relative;
         }
 
+        /* تنسيق الشعار الجديد الاحترافي */
+        .hotel-logo-container {
+            position: absolute;
+            top: 4%;
+            right: 4%;
+            z-index: 1000;
+        }
+        .hotel-logo-container img {
+            height: 80px; /* حجم الشعار الجديد ليكون واضحاً وفخماً */
+            width: auto;
+            object-fit: contain;
+        }
+
         .slide-content {
             padding: 0 8% 0 10%;
             display: flex;
@@ -78,34 +91,6 @@
             top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(to right, rgba(250, 249, 245, 0.9) 0%, rgba(250, 249, 245, 0) 25%);
             pointer-events: none;
-        }
-
-        .hotel-logo-fixed {
-            position: absolute;
-            top: 5%;
-            right: 5%;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #8E7A53;
-        }
-        .logo-placeholder-icon {
-            font-size: 20px;
-            color: #8E7A53;
-            border: 1px solid #8E7A53;
-            border-radius: 50%;
-            width: 38px;
-            height: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .brand-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            letter-spacing: 2px;
-            font-weight: 600;
         }
 
         h1 {
@@ -167,9 +152,8 @@
 
     <div class="viewport-16-9">
 
-        <div class="hotel-logo-fixed">
-            <div class="logo-placeholder-icon"><i class="fa-solid fa-house-user"></i></div>
-            <div class="brand-text">GHAZIX HOMES</div>
+        <div class="hotel-logo-container">
+            <img src="./logo.png" alt="Ghazix Homes Logo">
         </div>
 
         <div class="slider-wrapper" id="slider">
@@ -182,7 +166,7 @@
                     <p>نتمنى لكم إقامة مليئة بالراحة والهدوء. لقد صممنا كل ركن هنا بعناية ليناسب ذوقكم الرفيع ويمنحكم تجربة استثنائية.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="./entrance.jpg" alt="Ghazix Homes Entrance">
+                    <img src="./entrance.jpg" alt="Entrance">
                 </div>
             </div>
 
@@ -201,7 +185,7 @@
                     </div>
                 </div>
                 <div class="slide-image">
-                    <img src="./coffee.jpg" alt="Ghazix Homes Coffee Corner">
+                    <img src="./coffee.jpg" alt="Coffee">
                 </div>
             </div>
 
@@ -213,7 +197,7 @@
                     <p>الشاشة مزودة بجميع تطبيقات الترفيه العالمية (Netflix, YouTube) لتستمتعوا بمشاهدة برامجكم المفضلة بجودة فائقة.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="./living.jpg" alt="Ghazix Homes Living Room">
+                    <img src="./living.jpg" alt="Living Room">
                 </div>
             </div>
 
@@ -225,7 +209,7 @@
                     <p>أنتم الآن في أحد أرقى مواقع الخبر، محاطين بأجمل الإطلالات وأهم المطاعم والخدمات الفاخرة التي تجعل رحلتكم لا تُنسى.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="./view.jpg" alt="Ghazix Homes Window View">
+                    <img src="./view.jpg" alt="View">
                 </div>
             </div>
 
