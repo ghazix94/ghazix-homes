@@ -6,7 +6,7 @@
     <title>Ghazix Homes - يا هلا والله</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -19,7 +19,7 @@
         body {
             background-color: #111111;
             color: #2C2A29;
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Tajawal', sans-serif; /* الخط الأساسي المريح للنصوص */
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -28,7 +28,6 @@
             width: 100vw;
         }
 
-        /* حاوية الأبعاد الثابتة للتلفزيون */
         .viewport-container {
             width: 100vw;
             height: 100vh;
@@ -40,7 +39,6 @@
             box-shadow: 0 25px 60px rgba(0,0,0,0.65);
         }
 
-        /* حاوية السلايدر مضبوطة الاتجاه لمنع الاختفاء واللون الأبيض */
         .slider-wrapper {
             display: flex;
             width: 400%; 
@@ -58,7 +56,7 @@
             position: relative;
         }
 
-        /* الشعار بالزاوية اليمنى */
+        /* الشعار ثابت وفخم باليمين */
         .hotel-logo-container {
             position: absolute;
             top: 6%;
@@ -111,24 +109,26 @@
             pointer-events: none;
         }
 
+        /* تخصيص خط Amiri الفاخر للعناوين الكبيرة */
         h1 {
-            font-size: 3.2vw;
+            font-family: 'Amiri', serif;
+            font-size: 3.8vw;
             color: #1A1A1A;
             font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 12px;
+            line-height: 1.2;
+            margin-bottom: 15px;
         }
 
         h2 {
             font-size: 1.1vw;
             color: #8E7A53;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 1px;
             margin-bottom: 14px;
         }
 
         p {
-            font-size: 1.2vw;
+            font-size: 1.25vw;
             color: #514E4A;
             line-height: 1.8;
             font-weight: 400;
@@ -145,7 +145,7 @@
             list-style: none; 
         }
         .amenities-list li {
-            font-size: 1.15vw;
+            font-size: 1.2vw;
             margin-bottom: 1.4vw;
             display: flex;
             align-items: center;
@@ -167,20 +167,20 @@
             border: 1px solid #E4E0D5;
         }
 
-        /* التوافق التام مع الجوالات والشاشات الصغيرة */
+        /* التوافق مع الجوالات والشاشات الصغيرة */
         @media (max-width: 768px) {
-            body { overflow-y: auto; height: auto; }
+            body { overflow-y: auto; height: auto; font-family: 'Tajawal', sans-serif; }
             .viewport-container { height: auto; max-height: none; overflow: visible; }
             .slider-wrapper { display: block; width: 100%; }
             .slide { display: flex; flex-direction: column; width: 100%; height: auto; padding: 40px 20px; border-bottom: 1px solid #E4E0D5; }
             .hotel-logo-container { position: relative; top: 0; right: 0; margin: 20px auto; width: fit-content; }
             .slide-content { padding: 20px 10px; text-align: center; }
             .luxury-line { margin: 15px auto; }
-            h1 { font-size: 26px; }
+            h1 { font-size: 32px; }
             h2 { font-size: 14px; }
-            p { font-size: 15px; }
-            .amenities-list li { font-size: 14px; text-align: right; }
-            .amenities-list li i { font-size: 15px; }
+            p { font-size: 16px; }
+            .amenities-list li { font-size: 15px; text-align: right; }
+            .amenities-list li i { font-size: 16px; }
             .wifi-box { margin-top: 20px; padding: 15px; }
             .wifi-box p { font-size: 14px !important; }
             .slide-image { width: 100%; height: 280px; order: -1; }
@@ -200,7 +200,7 @@
             <div class="slide">
                 <div class="slide-content">
                     <h2>يا هلا والله ومسهلا</h2>
-                    <h1>نورتوا مكانكم <br>في الخبر</h1>
+                    <h1>نورتوا مكانكم <br>في الخبر..</h1>
                     <div class="luxury-line"></div>
                     <p>سعداء جداً بوجودكم معنا، ورتبنا لكم كل زاوية في الشقة بكل حب واهتمام عشان تعيشون تجربة مريحة، هادية، وتليق بجيتكم الغالية علينا.</p>
                 </div>
@@ -231,7 +231,7 @@
             <div class="slide">
                 <div class="slide-content">
                     <h2>وقت السينما والترفيه</h2>
-                    <h1>شاشة ذكية <br>وكل اللي تحبونه متوفر</h1>
+                    <h1>شاشة ذكية <br>وكل اللي تحبونه جاهز</h1>
                     <div class="luxury-line"></div>
                     <p>الشاشة مجهزة بأقوى برامج الترفيه (نتفليكس ويوتيوب). خذوا راحتكم، تمددوا على الكنب واستمتعوا بمشاهدة أفلامكم ومسلسلاتكم المفضلة بجودة عالية.</p>
                 </div>
@@ -261,11 +261,9 @@
         const totalSlides = 4;
         const displayTime = 8000; 
 
-        // تفعيل حركة انتقال آمنة ومدروسة تتوافق مع متصفحات التلفزيون
         if (window.innerWidth > 768) {
             setInterval(() => {
                 currentSlide = (currentSlide + 1) % totalSlides;
-                // الانتقال الآمن لليمين بنسبة مئوية تمنع اختفاء العناصر
                 slider.style.transform = `translateX(${currentSlide * 25}%)`;
             }, displayTime);
         }
