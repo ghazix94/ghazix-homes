@@ -3,121 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghazix Homes - Departure Guidelines</title>
+    <title>Ghazix Homes - Guest Showcase</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            background-color: #FAF9F5; /* لون خلفية عاجي فندقي نظيف */
-            color: #333;
+            background-color: #FAF9F5;
+            color: #2c2c2c;
             font-family: 'Cairo', sans-serif;
             overflow: hidden;
+        }
+
+        /* حاوية العرض الممتد للسلايدات */
+        .slider-wrapper {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            position: relative;
+            width: 400vw; 
+            height: 100vh;
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
-        /* حاوية السلايد الرئيسي */
+        /* تنسيق السلايد القياسي النظيف */
         .slide {
-            width: 1280px;
-            height: 720px;
-            padding: 60px 90px;
-            background: #FAF9F5;
+            width: 100vw;
+            height: 100vh;
+            background-color: #FAF9F5; 
             position: relative;
-            z-index: 10;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
         }
 
-        /* العناوين */
+        /* العناوين والنصوص */
         h1 {
-            font-size: 48px;
+            font-family: 'Playfair Display', 'Cairo', serif;
+            font-size: 52px;
             color: #1A1A1A;
             font-weight: 400;
             line-height: 1.4;
-            font-family: 'Playfair Display', 'Cairo', serif;
-            margin-bottom: 20px;
         }
 
         h2 {
             font-size: 24px;
             color: #8E7A53;
             font-weight: 400;
+            margin-bottom: 15px;
             letter-spacing: 1.5px;
-            margin-bottom: 10px;
         }
 
-        /* التنسيقات الرئيسية */
+        p {
+            font-size: 22px;
+            color: #5A5750;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .highlight-text {
+            color: #8E7A53;
+            font-weight: 600;
+        }
+
         .flex-container {
             display: flex;
             gap: 80px;
             align-items: center;
-            margin-top: 40px;
         }
 
         .col { flex: 1; }
 
-        /* قائمة المغادرة */
+        /* قائمة المغادرة النظيفة */
         .checkout-list { list-style: none; }
         .checkout-list li {
-            font-size: 22px;
-            margin-bottom: 28px;
+            font-size: 21px;
+            margin-bottom: 26px;
             display: flex;
             align-items: center;
             gap: 20px;
             color: #3A3832;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         .checkout-list li i {
             color: #8E7A53;
-            font-size: 20px;
-            width: 30px;
+            font-size: 18px;
+            width: 25px;
             text-align: center;
         }
 
-        /* وصف جانبي */
+        /* مربع التقييم */
+        .rating-box {
+            background: #F3EFE6;
+            border: 1px solid #E3DFD5;
+            padding: 40px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .stars {
+            color: #D4AF37;
+            font-size: 36px;
+            margin: 20px 0;
+            letter-spacing: 6px;
+        }
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 25px;
+        }
+
+        .luxury-line {
+            width: 80px;
+            height: 1px;
+            background-color: #8E7A53;
+        }
+
         .side-note {
             background-color: #f3efe6;
-            padding: 35px;
+            padding: 30px;
             border-left: 3px solid #8E7A53;
             color: #5A5750;
-            font-size: 19px;
+            font-size: 18px;
             line-height: 1.8;
             font-weight: 300;
+            margin-top: 30px;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <div class="slide">
+    <div class="slider-wrapper" id="slider">
         
-        <div class="flex-container">
-            <div class="col">
-                <h2>Departure Guidelines</h2>
-                <h1>تفاصيل تهمنا<br>قبل مغادرتكم</h1>
+        <div class="slide">
+            <div class="center-content">
+                <h2>Luxury Stay Experience</h2>
+                <h1>رافقتكم السلامة في حلّكم وترحالكم</h1>
+                <div class="luxury-line"></div>
+                <p style="max-width: 850px;">سعدنا جداً باستضافتكم في غازيكس هومز، ونأمل أن نكون قد وفقنا في تقديم تجربة تليق بكم وتترك ذكرى طيبة في زيارتكم للخبر.</p>
             </div>
-            
-            <div class="col">
-                <ul class="checkout-list">
-                    <li><i class="fa-solid fa-key"></i> <span>ترك بطاقة الدخول أو المفتاح على <strong>طاولة الاستقبال داخل الشقة</strong>.</span></li>
-                    <li><i class="fa-solid fa-power-off"></i> <span>التأكد من <strong>إغلاق الإضاءة وأجهزة التكييف</strong> دعماً للاستدامة.</span></li>
-                    <li><i class="fa-solid fa-lock"></i> <span>التأكد من <strong>إغلاق باب الشقة الخارجي</strong> بإحكام عند الخروج.</span></li>
-                    <li><i class="fa-solid fa-suitcase"></i> <span>مراجعة الغرف للتأكد من <strong>عدم نسيان متعلقاتكم الثمينة</strong>.</span></li>
-                </ul>
-                
-                <div style="margin-top: 40px;">
-                    <p class="side-note">
-                        لأن راحتكم مستمرة حتى آخر لحظة، يرجى التكرم باتباع خطوات المغادرة البسيطة هذه لضمان خروج سلس وتجربة مغادرة خالية من المتاعب.
-                    </p>
+        </div>
+
+        <div class="slide">
+            <div class="flex-container">
+                <div class="col">
+                    <h2>Departure Guidelines</h2>
+                    <h1>تفاصيل تهمنا<br>قبل مغادرتكم</h1>
+                </div>
+                <div class="col">
+                    <ul class="checkout-list">
+                        <li><i class="fa-solid fa-key"></i> <span>ترك بطاقة الدخول أو المفتاح على <strong>طاولة الاستقبال داخل الشقة</strong>.</span></li>
+                        <li><i class="fa-solid fa-power-off"></i> <span>التأكد من <strong>إغلاق الإضاءة وأجهزة التكييف</strong> دعماً للاستدامة.</span></li>
+                        <li><i class="fa-solid fa-lock"></i> <span>التأكد من <strong>إغلاق باب الشقة الخارجي</strong> بإحكام عند الخروج.</span></li>
+                        <li><i class="fa-solid fa-suitcase"></i> <span>مراجعة الغرف للتأكد من <strong>عدم نسيان متعلقاتكم الثمينة</strong>.</span></li>
+                    </ul>
+                    <div class="side-note">
+                        لأن راحتكم مستمرة حتى آخر لحظة، يرجى التكرم باتباع خطوات المغادرة البسيطة لضمان خروج سلس.
+                    </div>
                 </div>
             </div>
         </div>
 
+        <div class="slide">
+            <div class="flex-container">
+                <div class="col" style="flex: 1.1;">
+                    <h2>Your Feedback Matters</h2>
+                    <h1 style="margin-bottom: 25px;">رأيكم يكمل مسيرة ضيافتنا</h1>
+                    <p style="margin-bottom: 20px;">في عائلة <span class="highlight-text">غازيكس هومز</span>، نطمح دائماً لتقديم تجربة فندقية متكاملة من 5 نجوم. تقييمكم الصادق ودعمكم لنا على منصة <strong>Airbnb</strong> يمنحنا الشغف للاستمرار والتميز.</p>
+                    <p style="font-size: 18px; font-style: italic; color: #8E7A53;">* إذا واجهتكم أي ملاحظة، يسعدنا سماعها منكم مباشرة عبر الواتساب لتفاديها فوراً.</p>
+                </div>
+                <div class="col" style="flex: 0.9;">
+                    <div class="rating-box">
+                        <p style="font-size: 15px; letter-spacing: 2px; color: #8E7A53; font-weight: 600;">AIRBNB RATING</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p style="font-size: 20px; color: #1A1A1A; font-weight: 600; margin-bottom: 12px;">شكراً لمنحنا تقييم 5 نجوم</p>
+                        <p style="font-size: 16px; line-height: 1.6;">كلماتكم الجميلة تساعد المسافرين الآخرين في العثور على ملاذهم المثالي بالمنطقة الشرقية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" style="background-color: #1A1A1A; color: #FAF9F5;">
+            <div class="center-content">
+                <h1 style="color: #FAF9F5; font-size: 54px; font-family: 'Playfair Display', serif; letter-spacing: 2px;">SEE YOU SOON, AND SAFE TRAVELS</h1>
+                <div class="luxury-line" style="background-color: #D4AF37;"></div>
+                <p style="color: #C7C4BB; max-width: 750px;">نتمنى لكم رحلة عودة آمنة وموفقة، ونتطلع بشوق لاستضافتكم مجدداً لتكونوا دائماً جزءاً من قصة نجاحنا في زياراتكم القادمة.</p>
+            </div>
+        </div>
+
     </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        let currentSlide = 0;
+        const totalSlides = 4;
+        const displayTime = 8000; 
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slider.style.transform = `translateX(${currentSlide * 100}vw)`;
+        }, displayTime);
+    </script>
 
 </body>
 </html>
