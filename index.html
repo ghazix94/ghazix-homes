@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghazix Homes - Welcome Experience</title>
+    <title>Ghazix Homes - Exclusive Stay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            background-color: #1a1a1a;
-            color: #2c2c2c;
-            font-family: 'Cairo', sans-serif;
+            background-color: #111111;
+            color: #2C2A29;
+            font-family: 'Montserrat', sans-serif;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -23,50 +23,56 @@
             width: 100vw;
         }
 
-        /* حاوية الأبعاد الصارمة 16:9 */
+        /* حاوية الأبعاد الصارمة لشاشة التلفزيون 16:9 */
         .viewport-16-9 {
             width: 100vw;
             height: 56.25vw;
             max-height: 100vh;
             max-width: 177.78vh;
-            background-color: #FAF9F5;
+            background-color: #FBFBF9;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.65);
         }
 
         .slider-wrapper {
             display: flex;
             width: 400%; 
             height: 100%;
-            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: transform 1.6s cubic-bezier(0.76, 0, 0.24, 1);
         }
 
         .slide {
             width: 25%;
             height: 100%;
-            background-color: #FAF9F5; 
+            background-color: #FBFBF9; 
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 0.9fr 1.1fr; /* تم عكس التوزيع ليتناسب مع اللغة الإنجليزية */
             align-items: center;
             position: relative;
         }
 
-        /* تنسيق الشعار الجديد الاحترافي */
+        /* حاوية الشعار الفاخر في الزاوية اليسرى للغة الإنجليزية */
         .hotel-logo-container {
             position: absolute;
-            top: 4%;
-            right: 4%;
+            top: 5%;
+            left: 5%;
             z-index: 1000;
+            background: rgba(251, 251, 249, 0.92);
+            padding: 10px 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+            border-left: 2px solid #8E7A53;
         }
         .hotel-logo-container img {
-            height: 80px; /* حجم الشعار الجديد ليكون واضحاً وفخماً */
+            height: 60px;
             width: auto;
+            display: block;
             object-fit: contain;
         }
 
         .slide-content {
-            padding: 0 8% 0 10%;
+            padding: 0 10% 0 8%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -85,66 +91,72 @@
             object-fit: cover;
             object-position: center;
         }
+        /* تدرج الظل الاحترافي مائل لليسار */
         .slide-image::after {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to right, rgba(250, 249, 245, 0.9) 0%, rgba(250, 249, 245, 0) 25%);
+            background: linear-gradient(to left, rgba(251, 251, 249, 0.95) 0%, rgba(251, 251, 249, 0) 25%);
             pointer-events: none;
         }
 
         h1 {
-            font-family: 'Playfair Display', 'Cairo', serif;
-            font-size: 3.3vw;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.8vw;
             color: #1A1A1A;
             font-weight: 400;
-            line-height: 1.4;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
         }
 
         h2 {
-            font-size: 1.4vw;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1vw;
             color: #8E7A53;
             font-weight: 400;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
         }
 
         p {
-            font-size: 1.3vw;
-            color: #5A5750;
+            font-size: 1.15vw;
+            color: #615E5B;
             line-height: 1.8;
             font-weight: 300;
         }
 
         .luxury-line {
-            width: 60px;
+            width: 50px;
             height: 1px;
             background-color: #8E7A53;
-            margin: 2vw 0;
+            margin: 1.8vw 0;
         }
 
         .amenities-list { list-style: none; }
         .amenities-list li {
-            font-size: 1.25vw;
-            margin-bottom: 1.4vw;
+            font-size: 1.1vw;
+            margin-bottom: 1.5vw;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
             color: #3A3832;
+            font-weight: 300;
         }
         .amenities-list li i {
             color: #8E7A53;
-            font-size: 1.3vw;
+            font-size: 1.2vw;
             width: 25px;
             text-align: center;
         }
 
         .wifi-box {
-            background: #F3EFE6;
-            padding: 1.5vw;
+            background: #F4F2EC;
+            padding: 1.2vw 1.5vw;
             border-radius: 4px;
             margin-top: 1vw;
-            border: 1px solid #E3DFD5;
+            border: 1px solid #E4E0D5;
         }
     </style>
 </head>
@@ -153,63 +165,63 @@
     <div class="viewport-16-9">
 
         <div class="hotel-logo-container">
-            <img src="./logo.png" alt="Ghazix Homes Logo">
+            <img src="https://images2.imgbox.com/71/61/j8m9Ueiz_o.png" alt="Ghazix Homes Logo">
         </div>
 
         <div class="slider-wrapper" id="slider">
             
             <div class="slide">
                 <div class="slide-content">
-                    <h2>Welcome to your Home</h2>
-                    <h1>أهلاً بكم في منزلكم الثاني بالخبر</h1>
+                    <h2>Welcome Experience</h2>
+                    <h1>Your Sanctuary <br>in Khobar</h1>
                     <div class="luxury-line"></div>
-                    <p>نتمنى لكم إقامة مليئة بالراحة والهدوء. لقد صممنا كل ركن هنا بعناية ليناسب ذوقكم الرفيع ويمنحكم تجربة استثنائية.</p>
+                    <p>We are delighted to have you as our guest. Every detail in this home has been curated to offer you an exceptional, peaceful, and elevated living experience.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="./entrance.jpg" alt="Entrance">
+                    <img src="https://images2.imgbox.com/97/5a/yGvU6KOf_o.png" alt="Entrance Corridor">
                 </div>
             </div>
 
             <div class="slide">
                 <div class="slide-content">
-                    <h2>Guest Amenities</h2>
-                    <h1>استمتعوا بلحظات من الاسترخاء</h1>
-                    <ul class="amenities-list" style="margin-top: 1.5vw;">
-                        <li><i class="fa-solid fa-mug-hot"></i> <span>ركن القهوة مجهز بالكامل لصباحاتكم الهادئة والمميزة.</span></li>
-                        <li><i class="fa-solid fa-wifi"></i> <span>إنترنت فائق السرعة متاح ومجاني طوال فترة إقامتكم.</span></li>
-                        <li><i class="fa-solid fa-snowflake"></i> <span>نظام تكييف ذكي ومثالي لضمان أعلى درجات الراحة.</span></li>
+                    <h2>Premium Amenities</h2>
+                    <h1>Indulge in Quiet <br>Moments</h1>
+                    <ul class="amenities-list" style="margin-top: 1vw;">
+                        <li><i class="fa-solid fa-mug-hot"></i> <span>Fully equipped coffee bar tailored for your perfect mornings.</span></li>
+                        <li><i class="fa-solid fa-wifi"></i> <span>Complimentary ultra-high-speed 5G network across the unit.</span></li>
+                        <li><i class="fa-solid fa-snowflake"></i> <span>Smart climate control system configured for maximum comfort.</span></li>
                     </ul>
                     <div class="wifi-box">
-                        <p style="font-size: 0.9vw; font-weight: 700; color: #8E7A53; margin-bottom: 0.3vw;">WIFI DETAILS</p>
-                        <p style="font-size: 1.1vw; color: #1a1a1a; font-weight: 600;">Network: Ghazix_Homes_5G</p>
+                        <p style="font-size: 0.8vw; font-weight: 500; color: #8E7A53; letter-spacing: 2px; margin-bottom: 0.3vw;">COMPLIMENTARY WIFI</p>
+                        <p style="font-size: 1.1vw; color: #1a1a1a; font-weight: 400; font-family: 'Cormorant Garamond', serif; font-size: 1.4vw;">Network: <b>Ghazix_Homes_5G</b></p>
                     </div>
                 </div>
                 <div class="slide-image">
-                    <img src="./coffee.jpg" alt="Coffee">
+                    <img src="https://images2.imgbox.com/94/80/mbeC3H9k_o.png" alt="Coffee Corner">
                 </div>
             </div>
 
             <div class="slide">
                 <div class="slide-content">
-                    <h2>Smart Entertainment</h2>
-                    <h1>تجربة ترفيهية ذكية متكاملة</h1>
+                    <h2>Smart Living</h2>
+                    <h1>Immersive <br>Entertainment</h1>
                     <div class="luxury-line"></div>
-                    <p>الشاشة مزودة بجميع تطبيقات الترفيه العالمية (Netflix, YouTube) لتستمتعوا بمشاهدة برامجكم المفضلة بجودة فائقة.</p>
+                    <p>The smart display is fully equipped with premium streaming platforms (Netflix & YouTube). Relax and enjoy your preferred cinematic content in high definition.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="./living.jpg" alt="Living Room">
+                    <img src="https://images2.imgbox.com/39/53/1BIdT9oI_o.png" alt="Living Room">
                 </div>
             </div>
 
             <div class="slide">
                 <div class="slide-content">
-                    <h2>The Location</h2>
-                    <h1>اكتشفوا جمال الخبر من نافذتكم</h1>
+                    <h2>The Neighborhood</h2>
+                    <h1>Discover the Beauty <br>of the Coast</h1>
                     <div class="luxury-line"></div>
-                    <p>أنتم الآن في أحد أرقى مواقع الخبر، محاطين بأجمل الإطلالات وأهم المطاعم والخدمات الفاخرة التي تجعل رحلتكم لا تُنسى.</p>
+                    <p>Situated in one of Khobar's most prestigious districts, you are just moments away from premium dining, luxury shopping, and vibrant coastal landmarks.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="./view.jpg" alt="View">
+                    <img src="https://images2.imgbox.com/df/7c/4f2LgU6D_o.png" alt="Window View">
                 </div>
             </div>
 
@@ -224,7 +236,8 @@
 
         setInterval(() => {
             currentSlide = (currentSlide + 1) % totalSlides;
-            slider.style.transform = `translateX(${currentSlide * 25}%)`;
+            // التحريك السلس لليسار بما يناسب اتجاه القراءة الإنجليزي
+            slider.style.transform = `translateX(-${currentSlide * 25}%)`;
         }, displayTime);
     </script>
 
