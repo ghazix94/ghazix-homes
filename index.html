@@ -23,6 +23,7 @@
             width: 100vw;
         }
 
+        /* حاوية الأبعاد الصارمة 16:9 الفندقية */
         .viewport-16-9 {
             width: 100vw;
             height: 56.25vw;
@@ -31,6 +32,7 @@
             background-color: #FAF9F5;
             overflow: hidden;
             position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
         }
 
         .slider-wrapper {
@@ -78,6 +80,7 @@
             pointer-events: none;
         }
 
+        /* الشعار الثابت في الزاوية العلوية اليمنى طوال العرض */
         .hotel-logo-fixed {
             position: absolute;
             top: 5%;
@@ -89,11 +92,12 @@
             color: #8E7A53;
         }
         .logo-placeholder-icon {
-            font-size: 22px;
+            font-size: 20px;
             color: #8E7A53;
             border: 1px solid #8E7A53;
             border-radius: 50%;
-            padding: 6px;
+            width: 38px;
+            height: 38px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -107,10 +111,10 @@
 
         h1 {
             font-family: 'Playfair Display', 'Cairo', serif;
-            font-size: 3.5vw;
+            font-size: 3.3vw;
             color: #1A1A1A;
             font-weight: 400;
-            line-height: 1.3;
+            line-height: 1.4;
         }
 
         h2 {
@@ -122,7 +126,7 @@
         }
 
         p {
-            font-size: 1.4vw;
+            font-size: 1.3vw;
             color: #5A5750;
             line-height: 1.8;
             font-weight: 300;
@@ -137,8 +141,8 @@
 
         .amenities-list { list-style: none; }
         .amenities-list li {
-            font-size: 1.3vw;
-            margin-bottom: 1.5vw;
+            font-size: 1.25vw;
+            margin-bottom: 1.4vw;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -146,21 +150,17 @@
         }
         .amenities-list li i {
             color: #8E7A53;
-            font-size: 1.4vw;
+            font-size: 1.3vw;
             width: 25px;
+            text-align: center;
         }
 
         .wifi-box {
             background: #F3EFE6;
-            padding: 2vw;
+            padding: 1.5vw;
             border-radius: 4px;
-            margin-top: 1.5vw;
+            margin-top: 1vw;
             border: 1px solid #E3DFD5;
-        }
-
-        .full-slide-center {
-            grid-template-columns: 1fr;
-            text-align: center;
         }
     </style>
 </head>
@@ -169,7 +169,7 @@
     <div class="viewport-16-9">
 
         <div class="hotel-logo-fixed">
-            <div class="logo-placeholder-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+            <div class="logo-placeholder-icon"><i class="fa-solid fa-house-user"></i></div>
             <div class="brand-text">GHAZIX HOMES</div>
         </div>
 
@@ -180,10 +180,10 @@
                     <h2>Welcome to your Home</h2>
                     <h1>أهلاً بكم في منزلكم الثاني بالخبر</h1>
                     <div class="luxury-line"></div>
-                    <p>نتمنى لكم إقامة مليئة بالراحة والهدوء. لقد صممنا كل ركن هنا ليناسب ذوقكم الرفيع.</p>
+                    <p>نتمنى لكم إقامة مليئة بالراحة والهدوء. لقد صممنا كل ركن هنا بعناية ليناسب ذوقكم الرفيع ويمنحكم تجربة استثنائية.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="entrance.jpg" alt="Entrance View">
+                    <img src="https://i.ibb.co/6ccm2X2F/entrance.png" alt="Ghazix Homes Entrance">
                 </div>
             </div>
 
@@ -191,18 +191,18 @@
                 <div class="slide-content">
                     <h2>Guest Amenities</h2>
                     <h1>استمتعوا بلحظات من الاسترخاء</h1>
-                    <ul class="amenities-list" style="margin-top: 2vw;">
-                        <li><i class="fa-solid fa-mug-hot"></i> <span>ركن القهوة مجهز بالكامل لصباحاتكم الهادئة.</span></li>
-                        <li><i class="fa-solid fa-wifi"></i> <span>إنترنت فائق السرعة متاح طوال فترة إقامتكم.</span></li>
-                        <li><i class="fa-solid fa-snowflake"></i> <span>نظام تكييف مركزي لضمان أعلى درجات الراحة.</span></li>
+                    <ul class="amenities-list" style="margin-top: 1.5vw;">
+                        <li><i class="fa-solid fa-mug-hot"></i> <span>ركن القهوة مجهز بالكامل لصباحاتكم الهادئة والمميزة.</span></li>
+                        <li><i class="fa-solid fa-wifi"></i> <span>إنترنت فائق السرعة متاح ومجاني طوال فترة إقامتكم.</span></li>
+                        <li><i class="fa-solid fa-snowflake"></i> <span>نظام تكييف ذكي ومثالي لضمان أعلى درجات الراحة.</span></li>
                     </ul>
                     <div class="wifi-box">
-                        <p style="font-size: 0.9vw; font-weight: 700; color: #8E7A53;">WIFI DETAILS</p>
-                        <p style="font-size: 1.2vw; color: #1a1a1a;">Network: Ghazix_Homes_5G</p>
+                        <p style="font-size: 0.9vw; font-weight: 700; color: #8E7A53; margin-bottom: 0.3vw;">WIFI DETAILS</p>
+                        <p style="font-size: 1.1vw; color: #1a1a1a; font-weight: 600;">Network: Ghazix_Homes_5G</p>
                     </div>
                 </div>
                 <div class="slide-image">
-                    <img src="coffee.jpg" alt="Coffee Corner">
+                    <img src="https://i.ibb.co/C5fLSwb6/coffee.png" alt="Ghazix Homes Coffee Corner">
                 </div>
             </div>
 
@@ -211,10 +211,10 @@
                     <h2>Smart Entertainment</h2>
                     <h1>تجربة ترفيهية ذكية متكاملة</h1>
                     <div class="luxury-line"></div>
-                    <p>الشاشة مزودة بجميع تطبيقات الترفيه (Netflix, YouTube) لتستمتعوا بمشاهدة برامجكم المفضلة بجودة عالية.</p>
+                    <p>الشاشة مزودة بجميع تطبيقات الترفيه العالمية (Netflix, YouTube) لتستمتعوا بمشاهدة برامجكم المفضلة بجودة فائقة.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="living.jpg" alt="Living Room">
+                    <img src="https://i.ibb.co/gLLvY7fF/living.png" alt="Ghazix Homes Living Room">
                 </div>
             </div>
 
@@ -223,10 +223,10 @@
                     <h2>The Location</h2>
                     <h1>اكتشفوا جمال الخبر من نافذتكم</h1>
                     <div class="luxury-line"></div>
-                    <p>أنتم الآن في أحد أرقى أحياء الخبر، محاطين بأهم المعالم والمطاعم والخدمات التي تجعل رحلتكم استثنائية.</p>
+                    <p>أنتم الآن في أحد أرقى مواقع الخبر، محاطين بأجمل الإطلالات وأهم المطاعم والخدمات الفاخرة التي تجعل رحلتكم لا تُنسى.</p>
                 </div>
                 <div class="slide-image">
-                    <img src="view.jpg" alt="Window View">
+                    <img src="https://i.ibb.co/wZ8Z4vL2/view.png" alt="Ghazix Homes Window View">
                 </div>
             </div>
 
