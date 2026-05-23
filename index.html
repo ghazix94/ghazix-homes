@@ -19,7 +19,7 @@
         body {
             background-color: #111111;
             color: #2C2A29;
-            font-family: 'Tajawal', sans-serif; /* الخط الأساسي للنصوص الصغيرة لراحة العين */
+            font-family: 'Tajawal', sans-serif;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -109,7 +109,7 @@
             pointer-events: none;
         }
 
-        /* العناوين الكبيرة بخط Lateef الفخم */
+        /* العناوين الكبيرة بخط Lateef */
         h1 {
             font-family: 'Lateef', serif;
             font-size: 5.6vw;
@@ -171,7 +171,6 @@
             border: 1px solid #E4E0D5;
         }
 
-        /* التوافق التام مع الجوالات والشاشات الصغيرة */
         @media (max-width: 768px) {
             body { overflow-y: auto; height: auto; }
             .viewport-container { height: auto; max-height: none; overflow: visible; }
@@ -203,8 +202,8 @@
             
             <div class="slide">
                 <div class="slide-content">
-                    <h2>يا هلا والله ومسهلا</h2>
-                    <h1>نورتوا مكانكم <br>في الخبر..</h1>
+                    <h2 id="guest-welcome">يا هلا والله ومسهلا</h2>
+                    <h1><span id="guest-name">يا ضيفنا الغالي</span>، <br>نورتوا مكانكم في الخبر..</h1>
                     <div class="luxury-line"></div>
                     <p>سعداء جداً بوجودكم معنا، ورتبنا لكم كل زاوية في الشقة بكل حب واهتمام عشان تعيشون تجربة مريحة، هادية، وتليق بجيتكم الغالية علينا.</p>
                 </div>
@@ -260,6 +259,25 @@
     </div>
 
     <script>
+        // سكربت ذكي لقراءة اسم الضيف تلقائياً من رابط الـ URL
+        function getGuestName() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const guest = urlParams.get('guest');
+            if (guest) {
+                // تنظيف الاسم المستلم من أي علامات زائدة أو شرطات
+                return decodeURIComponent(guest).replace(/_/g, ' ');
+            }
+            return null;
+        }
+
+        // تطبيق اسم الضيف إذا وُجد في الرابط
+        const guestName = getGuestName();
+        if (guestName) {
+            document.getElementById('guest-name').innerText = 'يا هلا بـ ' + guestName;
+            document.getElementById('guest-welcome').innerText = 'حياك الله ومسهلا';
+        }
+
+        // تحريك السلايدر
         const slider = document.getElementById('slider');
         let currentSlide = 0;
         const totalSlides = 4;
